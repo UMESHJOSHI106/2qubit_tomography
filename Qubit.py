@@ -145,23 +145,28 @@ reconstruction involves measuring the polarization of a beam of light in multipl
 different bases, and using these measurements to determine the  elements of the
 density matrix that describe the polarization  state of the beam""")
 st.text("Input the coincidence counts for the given basis ")
+col1,col2,col3,col4=st.columns(4)
+with col1:
+	a = st.text_input("1.HH")
+	b = st.text_input("2.HV")
+	c = st.text_input("3.HD")
+	d = st.text_input("4.HL")
+with col2:
+	e = st.text_input("5.VH")
+	f = st.text_input("6.VV")
+	g = st.text_input("7.VD")
+	h = st.text_input("8.VL")
+with col3:
+	j = st.text_input("9.DH")
+	k = st.text_input("10.DV")
+	l = st.text_input("11.DD")
+	m = st.text_input("12.DL")
+col4:
 
-a = st.text_input("1.HH")
-b = st.text_input("2.HV")
-c = st.text_input("3.HD")
-d = st.text_input("4.HL")
-e = st.text_input("5.VH")
-f = st.text_input("6.VV")
-g = st.text_input("7.VD")
-h = st.text_input("8.VL")
-j = st.text_input("9.DH")
-k = st.text_input("10.DV")
-l = st.text_input("11.DD")
-m = st.text_input("12.DL")
-n = st.text_input("13.LH")
-o = st.text_input("14.LV")
-p = st.text_input("15.LD")
-q = st.text_input("16.LL")
+	n = st.text_input("13.LH")
+	o = st.text_input("14.LV")
+	p = st.text_input("15.LD")
+	q = st.text_input("16.LL")
 
 if a != '' and b != '' and c != '' and d != '' and e != '' and f != '' and g != '' and h != '' and j != '' and k != '' and l != '' and m != '' and n != '' and o != '' and p != '' and q != '':
 
