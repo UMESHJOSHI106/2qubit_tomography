@@ -161,7 +161,7 @@ with col3:
 	k = st.text_input("10.DV")
 	l = st.text_input("11.DD")
 	m = st.text_input("12.DL")
-col4:
+with col4:
 
 	n = st.text_input("13.LH")
 	o = st.text_input("14.LV")
