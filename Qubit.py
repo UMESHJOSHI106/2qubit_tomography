@@ -174,14 +174,15 @@ if a != '' and b != '' and c != '' and d != '' and e != '' and f != '' and g != 
 	
 	N_all=np.array(N_all)
 	rho = qubit2_tomography(N_all)
-
-	if st.button("Calculate"):
+	flag =True
+	if st.button("Calculate") or flag:
 		st.text("CONCURRENCE")
 		st.write(concurrence(rho[0]))
 		st.text("Density MAtrix")
 		st.write(rho[0])
 		st.text("RHO REAL, IMAG")
 		st.pyplot(rho[1])
+		flag=False
 	
 
 # In[ ]:
