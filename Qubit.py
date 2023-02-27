@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 import streamlit as st
 
 
-st.code
+
 def qubit2_tomography(N):
 
     N=N/(N[0] + N[1] + N[4] + N[5])
