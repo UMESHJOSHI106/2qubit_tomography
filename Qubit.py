@@ -183,6 +183,7 @@ if a != '' and b != '' and c != '' and d != '' and e != '' and f != '' and g != 
 		st.text("RHO REAL, IMAG")
 		st.pyplot(rho[1])
 		flag=False
+	st.write(flag)
 	
 
 # In[ ]:
