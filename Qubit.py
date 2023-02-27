@@ -136,7 +136,7 @@ def concurrence(den):
 st.title("Two Qubit Tomography")
 st.text("Input the coincidence counts for the given basis ")
 
-a = st.text_input("1.HH",width=50)
+a = st.text_input("1.HH")
 b = st.text_input("2.HV")
 c = st.text_input("3.HD")
 d = st.text_input("4.HL")
