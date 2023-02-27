@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[ ]:
-
 
 import streamlit as st
 import numpy as np
@@ -26,4 +21,5 @@ def concurrence(den):
     return np.real(max(0, C_b))
 
 st.title('test')
-
+ll = st.text_input("Give me something")
+st.write(ll)
