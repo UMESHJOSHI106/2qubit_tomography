@@ -140,7 +140,7 @@ The polarization state of light can be represented using the density matrix,
 which is a mathematical tool that describes the  quantum state of a system.
 Density matrix reconstruction is the process of extracting the density matrix
 of a quantum system from a set of measurement outcomes.""")
-st.text("Input the coincidence counts for the given basis ")
+st.text("Replace the coincidence counts for the given basis ")
 col1,col2,col3,col4=st.columns(4)
 with col1:
 	a = st.text_input("1.HH",1000)
