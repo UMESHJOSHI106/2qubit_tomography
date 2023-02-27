@@ -11,7 +11,6 @@ import streamlit as st
 
 
 
-
 def qubit2_tomography(N):
 
     N=N/(N[0] + N[1] + N[4] + N[5])
@@ -52,8 +51,8 @@ def qubit2_tomography(N):
         L=0
         for i in range(16):
 
-            L += (Evec[i]*(np.trace(basis_vecs[i] @ rho)) -N[i]+(19/3178))**2 / (2 * np.trace(basis_vecs[i] @ rho))
-#             L += ((np.trace(basis_vecs[i] @ rho)) -N[i])**2 / (2 * np.trace(basis_vecs[i] @ rho))
+            #L += (Evec[i]*(np.trace(basis_vecs[i] @ rho)) -N[i]+(19/3178))**2 / (2 * np.trace(basis_vecs[i] @ rho))
+            L += ((np.trace(basis_vecs[i] @ rho)) -N[i])**2 / (2 * np.trace(basis_vecs[i] @ rho))
         return np.real(L)
 
 
@@ -102,38 +101,57 @@ def qubit2_tomography(N):
     ax1.bar3d(x, y, z, dx, dy, dz1)
     ax.set_xlabel('X Axis')
     ax.set_ylabel('Y Axis')
-    ax.set_zlabel('Z Axis')
+    ax.set_zlabel(' REAL')
     ax.set_zlim(-1,1)
 
 
     ax1.set_xlabel('X Axis')
     ax1.set_ylabel('Y Axis')
-    ax1.set_zlabel('Amplitude')
+    ax1.set_zlabel('IMAG')
     ax1.set_zlim(-1,1)
     plt.show()
     
     
     return np.round(rho,4),fig
 
+def concurrence(den):
+    
+    a = np.array([[0, -1j], [1j, 0]])
+
+    st = np.kron(a, a)
+
+    dent = den.conj()
+
+    f = den @ st @ dent @ st
+
+    ei = np.round(np.real(np.linalg.eigvals(f)),8)
+    ei.sort()
+    
+    C_b=0
+    C_b = np.sqrt(ei[3]) - np.sqrt(ei[0]) - np.sqrt(ei[1])  - np.sqrt(ei[2])  
+    
+    
+    return np.real(max(0, C_b))
 
 st.title("Two Qubit Tomography")
+st.text("Input the coincidence counts for the given basis ")
 
-a = st.text_input("HH")
-b = st.text_input("HV")
-c = st.text_input("HD")
-d = st.text_input("HL")
-e = st.text_input("VH")
-f = st.text_input("VV")
-g = st.text_input("VD")
-h = st.text_input("VL")
-j = st.text_input("DH")
-k = st.text_input("DV")
-l = st.text_input("DD")
-m = st.text_input("DL")
-n = st.text_input("LH")
-o = st.text_input("LV")
-p = st.text_input("LD")
-q = st.text_input("LL")
+a = st.text_input("1.HH")
+b = st.text_input("2.HV")
+c = st.text_input("3.HD")
+d = st.text_input("4.HL")
+e = st.text_input("5.VH")
+f = st.text_input("6.VV")
+g = st.text_input("7.VD")
+h = st.text_input("8.VL")
+j = st.text_input("9.DH")
+k = st.text_input("10.DV")
+l = st.text_input("11.DD")
+m = st.text_input("12.DL")
+n = st.text_input("13.LH")
+o = st.text_input("14.LV")
+p = st.text_input("15.LD")
+q = st.text_input("16.LL")
 
 if a != '' and b != '' and c != '' and d != '' and e != '' and f != '' and g != '' and h != '' and j != '' and k != '' and l != '' and m != '' and n != '' and o != '' and p != '' and q != '':
 
@@ -142,11 +160,17 @@ if a != '' and b != '' and c != '' and d != '' and e != '' and f != '' and g != 
 	for x in N_all_0:
 		N_all.append(float(x))
 	
+	
 	N_all=np.array(N_all)
 	rho = qubit2_tomography(N_all)
 
-	st.write(rho[0])
-	st.pyplot(rho[1])
+	if st.button("Calculate"):
+		st.text("CONCURRENCE")
+		st.write(concurrence(rho[0]))
+		st.text("Density MAtrix")
+		st.write(rho[0])
+		st.text("RHO REAL, IMAG")
+		st.pyplot(rho[1])
 	
 
 # In[ ]:
