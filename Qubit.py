@@ -160,7 +160,7 @@ with col3:
 with col4:
 
 	n = st.text_input("13.LH",100)
-	o = st.text_input("14.LV"200)
+	o = st.text_input("14.LV",200)
 	p = st.text_input("15.LD",200)
 	q = st.text_input("16.LL",200)
 
