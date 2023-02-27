@@ -139,34 +139,30 @@ to fully characterize the polarization state of light.
 The polarization state of light can be represented using the density matrix,
 which is a mathematical tool that describes the  quantum state of a system.
 Density matrix reconstruction is the process of extracting the density matrix
-of a quantum system from a set of
-measurement outcomes. In the context of polarization tomography, density  matrix
-reconstruction involves measuring the polarization of a beam of light in multiple 
-different bases, and using these measurements to determine the  elements of the
-density matrix that describe the polarization  state of the beam""")
+of a quantum system from a set of measurement outcomes.""")
 st.text("Input the coincidence counts for the given basis ")
 col1,col2,col3,col4=st.columns(4)
 with col1:
-	a = st.text_input("1.HH")
-	b = st.text_input("2.HV")
-	c = st.text_input("3.HD")
-	d = st.text_input("4.HL")
+	a = st.text_input("1.HH",1000)
+	b = st.text_input("2.HV",200)
+	c = st.text_input("3.HD",200)
+	d = st.text_input("4.HL",500)
 with col2:
-	e = st.text_input("5.VH")
-	f = st.text_input("6.VV")
-	g = st.text_input("7.VD")
-	h = st.text_input("8.VL")
+	e = st.text_input("5.VH",800)
+	f = st.text_input("6.VV",400)
+	g = st.text_input("7.VD",500)
+	h = st.text_input("8.VL",500)
 with col3:
-	j = st.text_input("9.DH")
-	k = st.text_input("10.DV")
-	l = st.text_input("11.DD")
-	m = st.text_input("12.DL")
+	j = st.text_input("9.DH",100)
+	k = st.text_input("10.DV",100)
+	l = st.text_input("11.DD",100)
+	m = st.text_input("12.DL",100)
 with col4:
 
-	n = st.text_input("13.LH")
-	o = st.text_input("14.LV")
-	p = st.text_input("15.LD")
-	q = st.text_input("16.LL")
+	n = st.text_input("13.LH",100)
+	o = st.text_input("14.LV"200)
+	p = st.text_input("15.LD",200)
+	q = st.text_input("16.LL",200)
 
 if a != '' and b != '' and c != '' and d != '' and e != '' and f != '' and g != '' and h != '' and j != '' and k != '' and l != '' and m != '' and n != '' and o != '' and p != '' and q != '':
 
