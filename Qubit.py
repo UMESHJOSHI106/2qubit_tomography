@@ -134,8 +134,13 @@ def concurrence(den):
     return np.real(max(0, C_b))
 
 st.title("Two Qubit Tomography")
-st.text("""Polarization tomography is a technique used in quantum optics to fully characterize the polarization state of light. The polarization state of light can be represented using the density matrix, which is a mathematical tool that describes the quantum state of a system.
-Density matrix reconstruction is the process of extracting the density matrix of a quantum system from a set of measurement outcomes. In the context of polarization tomography, density matrix reconstruction involves measuring the polarization of a beam of light in multiple different bases, and using these measurements to determine the elements of the density matrix that describe the polarization state of the beam""")
+st.text("""Polarization tomography is a technique used in quantum optics to fully characterize the polarization state of light.
+The polarization state of light can be represented using the density matrix, which is a mathematical tool that describes the 
+quantum state of a system.
+Density matrix reconstruction is the process of extracting the density matrix of a quantum system from a set of
+measurement outcomes. In the context of polarization tomography, density matrix reconstruction involves measuring
+the polarization of a beam of light in multiple different bases, and using these measurements to determine the 
+elements of the density matrix that describe the polarization state of the beam""")
 st.text("Input the coincidence counts for the given basis ")
 
 a = st.text_input("1.HH")
