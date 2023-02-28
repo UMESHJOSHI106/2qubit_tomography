@@ -18,7 +18,7 @@ st.markdown(
     """,
     unsafe_allow_html=True
 )
-st.image('https://www.edc.pitt.edu/wp-content/uploads/2016/06/technology-header01.jpg', caption='', width='100%')
+st.image('https://www.edc.pitt.edu/wp-content/uploads/2016/06/technology-header01.jpg', caption='', use_column_width=True)
 
 def qubit2_tomography(N):
 
