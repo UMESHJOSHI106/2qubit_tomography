@@ -9,7 +9,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import streamlit as st
 
-
+st.image('https://i.pinimg.com/originals/63/3e/6f/633e6fea0338ae1a7add27a6567b12e8.png', caption='', use_column_width=True)
 
 def qubit2_tomography(N):
 
