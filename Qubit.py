@@ -8,7 +8,16 @@ from scipy.optimize import minimize
 import numpy as np
 import matplotlib.pyplot as plt
 import streamlit as st
-
+st.markdown(
+    """
+    <style>
+    body {
+        background-color: #f0f0f0;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 st.image('https://www.edc.pitt.edu/wp-content/uploads/2016/06/technology-header01.jpg', caption='', use_column_width=True)
 
 def qubit2_tomography(N):
