@@ -5,9 +5,11 @@
 
 
 from scipy.optimize import minimize
+from scipy.optimize import sqrtm
 import numpy as np
 import matplotlib.pyplot as plt
 import streamlit as st
+
 st.markdown(
     """
     <style>
@@ -120,8 +122,20 @@ def qubit2_tomography(N):
     ax1.set_zlim(-1,1)
     plt.show()
     
+    #     rho = np.array([[0.5,0,0, 0.5],[0.0,0,0, 0.0], [0.0,0,0, 0.0],[0.5,0,0, 0.5]])
+    sigma = np.array([[0.5,0,0, 0.5],[0.0,0,0, 0.0],[0.0,0,0, 0.0], [0.5,0,0, 0.5]])  # Bell state
+
+    # Compute the square root of rho and the matrix in the square root
+    sqrt_rho = sqrtm(rho)
+    sqrt_matrix = sqrtm(sqrt_rho @ sigma @ sqrt_rho)
+
+    # Calculate the fidelity
+    F = (np.trace(sqrt_matrix @ sqrt_matrix))**2
+
+    # Print the fidelity
+    print("Fidelity:", abs(F))
     
-    return np.round(rho,4),fig
+    return np.round(rho,4),fig, abs(F)
 
 def concurrence(den):
     
@@ -182,15 +196,18 @@ if a != '' and b != '' and c != '' and d != '' and e != '' and f != '' and g != 
 	
 	
 	N_all=np.array(N_all)
-	rho = qubit2_tomography(N_all)
+	result = qubit2_tomography(N_all)
 	flag =True
 	if st.button("Calculate") or flag:
 		st.text("CONCURRENCE")
-		st.write(concurrence(rho[0]))
+		st.write(concurrence(result[0]))
+		st.text("Fidelity with Bell(0) State")
+		st.write(result[2])
 		st.text("Density MAtrix")
-		st.write(rho[0])
+		st.write(result[0])
 		st.text("RHO REAL, IMAG")
-		st.pyplot(rho[1])
+		st.pyplot(result[1])
+		
 		flag=False
 	
 	
