@@ -5,7 +5,7 @@
 
 
 from scipy.optimize import minimize
-from scipy import sqrtm
+from scipy.linalg import sqrtm
 import numpy as np
 import matplotlib.pyplot as plt
 import streamlit as st
