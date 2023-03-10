@@ -130,7 +130,7 @@ def qubit2_tomography(N):
     sqrt_matrix = sqrtm(sqrt_rho @ sigma @ sqrt_rho)
 
     # Calculate the fidelity
-    F = (np.trace(sqrt_matrix @ sqrt_matrix))**2
+    F = (np.trace(sqrt_matrix))**2
 
     # Print the fidelity
     print("Fidelity:", abs(F))
