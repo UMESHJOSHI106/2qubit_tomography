@@ -205,6 +205,11 @@ def phase_matching_page():
     st.write(f"Selected Wavelength: {wavelength} nm")
     st.write(f"Phase Matching Angle: {angle:.2f} degrees")
     st.pyplot(fig)
+    
+def projects():
+    image_url = "https://github.com/UMESHJOSHI106/2qubit_tomography/blob/main/Umesh_M.Tech_projects%20(1)_page-0001.jpg"
+    st.image(image_url, caption='', use_column_width=True)
+
 
 import numpy as np
 from scipy.optimize import minimize
