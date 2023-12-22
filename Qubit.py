@@ -1440,7 +1440,7 @@ def main():
     elif page == "Quantum State Tomography":
         software_list_page()
     elif page == "SPDC Sources":
-        software_list_page()
+        projects()
     elif page == "Phase Matching Angle BBO,KDP":
         phase_matching_page()
     elif page == "Compensation Crystal Length":
