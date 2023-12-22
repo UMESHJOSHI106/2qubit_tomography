@@ -207,7 +207,7 @@ def phase_matching_page():
     st.pyplot(fig)
     
 def projects():
-    image_url = https://drive.google.com/file/d/151eXFuuBMj_8_P1nMdbHoBBpKOQo4BgM/view?usp=sharing
+    image_url = "https://drive.google.com/file/d/151eXFuuBMj_8_P1nMdbHoBBpKOQo4BgM/view?usp=sharing"
     st.image(image_url, caption='', use_column_width=True)
 
 
