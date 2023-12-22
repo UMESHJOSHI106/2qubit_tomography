@@ -207,7 +207,7 @@ def phase_matching_page():
     st.pyplot(fig)
     
 def projects():
-    image_url = "https://github.com/UMESHJOSHI106/2qubit_tomography/blob/main/Umesh_M.Tech_projects%20(1)_page-0001.jpg"
+    image_url = https://drive.google.com/file/d/151eXFuuBMj_8_P1nMdbHoBBpKOQo4BgM/view?usp=drive_link
     st.image(image_url, caption='', use_column_width=True)
 
 
