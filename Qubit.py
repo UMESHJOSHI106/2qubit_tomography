@@ -1445,7 +1445,7 @@ def main():
     elif page == "SPDC Sources":
         projects()
     elif page == "Phase Matching Angle BBO,KDP":
-        phase_matching_page()
+        phase_matching_type12()
     elif page == "Compensation Crystal Length":
         phase_matching_page()
     elif page == "PPKTP QPM Type(0 and 2)":
